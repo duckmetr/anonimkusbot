@@ -18,7 +18,7 @@ bot.use((new LocalSession({ database: 'session.json' })).middleware())
 
 bot.start(ctx => {
   if (ctx.startPayload) {
-    ctx.session.mode ??= true
+    ctx.session.mode = true
     ctx.session.receiver = ctx.startPayload
 
     ctx.reply(replyText.try)
