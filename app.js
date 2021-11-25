@@ -1,6 +1,7 @@
+import http from 'http'
 import { Telegraf } from 'telegraf'
-import replyText from './replyText.js'
 import dotenv from 'dotenv'
+import replyText from './replyText.js'
 
 dotenv.config()
 
@@ -30,6 +31,11 @@ bot.on('text', ctx => {
     ctx.reply(replyText.unknownCommand)
   }
 })
+
+http
+  .createServer()
+  .listen(process.env.PORT || 5000)
+  .on('request', res => res.end(''))
 
 await bot.launch()
 console.log('bot started..')
