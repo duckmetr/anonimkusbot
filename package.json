@@ -2,17 +2,22 @@
   "name": "anonimki",
   "type": "module",
   "version": "1.0.0",
-  "description": "",
+  "description": "telegram bot for anonimus messages",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "bot",
+    "telegram"
+  ],
+  "author": "duckmetr",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^10.0.0",
-    "telegraf": "^4.4.2"
+    "mongoose": "^6.0.13",
+    "telegraf": "^4.4.2",
+    "telegraf-session-local": "^2.1.0"
   }
 }
