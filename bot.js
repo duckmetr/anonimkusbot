@@ -10,7 +10,7 @@ dotenv.config()
 
 const MONGODB_URI = process.env.MONGODB_URI
 const MONGODB_OPTIONS = {useNewUrlParser: true, useUnifiedTopology: true}
-const bot = new Telegraf(process.env.TG_TOKEN)
+const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot.use((new LocalSession({ database: 'session.json' })).middleware())
 
@@ -48,6 +48,14 @@ bot.on('text', async ctx => {
   }
 })
 
-await mongoose.connect(MONGODB_URI, MONGODB_OPTIONS)
-await bot.launch()
-console.log('bot started..')
+main()
+
+async function main() {
+  try {
+    await mongoose.connect(MONGODB_URI, MONGODB_OPTIONS)
+    await bot.launch()
+    console.log('bot started..')
+  } catch (err) {
+    console.log(err.message)
+  }
+}

@@ -3,10 +3,10 @@
   "type": "module",
   "version": "1.0.0",
   "description": "telegram bot for anonimus messages",
-  "main": "app.js",
+  "main": "bot.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node bot.js",
+    "dev": "nodemon bot.js"
   },
   "keywords": [
     "bot",
